@@ -7,20 +7,20 @@ const links = [
 ];
 
 const abouts = [
-  "My Interest lies around frontend development, data structures & algorithms and solving real world problems.",
-  "I wrote my first line of code in 2022. I've spent my college years learning how code various tools and technologoies, and dsa. I am graduating in 2025 with a bachelor of computer application degree.",
+  "My interests lie in frontend development, data structures & algorithms, and solving real world problems.",
+  "I wrote my first line of code in 2022 and have spent my college years learning various tools, technologies, and DSA. I will be graduating in 2025 with a Bachelor's degree in Computer Applications.",
 ];
 
 const About = () => {
   return (
     <Flex direction="column" gap="4">
       {abouts.map((about, index) => (
-        <Text className="text-neutral-400 text-md" key={index}>
+        <Text size="2" className="text-neutral-400 !leading-7" key={index}>
           {about}
         </Text>
       ))}
-      <Text className="text-neutral-400">
-        you can find me on:{" "}
+      <Text size="2" className="text-neutral-400 !leading-loose">
+        you can find me on{" "}
         {links.map((link, index) => (
           <Text className="text-neutral-300 text-md" key={index}>
             <Link href={link.url}>
