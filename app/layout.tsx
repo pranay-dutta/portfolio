@@ -24,8 +24,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${dmSans.variable} antialiased`}>
         <Theme appearance="dark">
-          <main className="p-10">
-            <Container size="3">{children}</Container>
+          <main className="px-5 py-10 lg:p-10">
+            <Container size="2">{children}</Container>
           </main>
         </Theme>
       </body>
