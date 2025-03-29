@@ -16,7 +16,7 @@ const IconPill = ({ icon: Icon, content, isLinked }: Props) => {
       gap="2"
       className={classNames({
         "text-xs rounded-full cursor-pointer gap-2 px-3 py-1 border border-neutral-600": true,
-        "opacity-100 hover:scale-105 transition-all": isLinked,
+        "opacity-100": isLinked,
         "opacity-70 hover:opacity-100": !isLinked,
       })}
     >
