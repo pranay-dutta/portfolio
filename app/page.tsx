@@ -6,7 +6,7 @@ import Technologies from "./_components/Technologies";
 
 export default function Home() {
   return (
-    <Flex gap="2" direction="column">
+    <Flex gap="2" direction="column" className="md:pr-28">
       <AvatarSection />
       <Heading mt="6" size="4" weight="medium">
         About

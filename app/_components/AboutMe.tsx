@@ -23,7 +23,7 @@ const About = () => {
         you can find me on{" "}
         {links.map((link, index) => (
           <Text className="text-neutral-300 text-md" key={index}>
-            <Link href={link.url}>
+            <Link href={link.url} target="_blank">
               {link.name}
               {index + 1 != links.length && ","}{" "}
             </Link>
