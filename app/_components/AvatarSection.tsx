@@ -1,8 +1,10 @@
 import { Flex, Heading, Text } from "@radix-ui/themes";
 import Image from "next/image";
 import Link from "next/link";
+import { FaGoogleDrive } from "react-icons/fa";
 import React from "react";
 import ProfileImg from "../../public/profile.png";
+import IconPill from "./IconPill";
 
 const AvatarSection = () => {
   return (
@@ -15,8 +17,8 @@ const AvatarSection = () => {
         <Text className="text-neutral-400" size="2">
           Frontend Developer
         </Text>
-        <Link target="_blank" href="https://google.com">
-          Resume
+        <Link className="font-medium" target="_blank" href="https://google.com">
+          <IconPill content="View Resume" icon={FaGoogleDrive} />
         </Link>
       </Flex>
     </Flex>

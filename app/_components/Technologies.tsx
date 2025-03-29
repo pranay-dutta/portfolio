@@ -1,32 +1,25 @@
-import { Flex, Text } from "@radix-ui/themes";
+import { Flex } from "@radix-ui/themes";
+import { IconType } from "react-icons";
+import { BiLogoPostgresql } from "react-icons/bi";
+import { GrReactjs } from "react-icons/gr";
+import { RiNextjsFill } from "react-icons/ri";
 import {
-  SiJavascript,
-  SiTypescript,
-  SiPrisma,
-  SiExpress,
-  SiTailwindcss,
   SiBootstrap,
   SiChakraui,
+  SiExpress,
+  SiJavascript,
   SiMui,
+  SiPrisma,
+  SiTailwindcss,
+  SiTypescript,
 } from "react-icons/si";
-import { RiNextjsFill } from "react-icons/ri";
-import { BiLogoPostgresql } from "react-icons/bi";
-import { IconType } from "react-icons";
-import { GrReactjs } from "react-icons/gr";
+import IconPill from "./IconPill";
 
 const Technologies = () => {
   return (
     <Flex align="center" gap="3" wrap="wrap">
-      {technologoies.map(({ icon: Icon, name }) => (
-        <Flex
-          key={name}
-          align="center"
-          gap="2"
-          className="text-xs opacity-70 hover:opacity-100 rounded-full cursor-pointer gap-2 px-3 py-1 border border-neutral-600"
-        >
-          <Icon size={14} />
-          <Text>{name}</Text>
-        </Flex>
+      {technologoies.map(({ icon, name }) => (
+        <IconPill key={name} icon={icon} content={name} />
       ))}
     </Flex>
   );
