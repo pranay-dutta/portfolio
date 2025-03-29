@@ -22,7 +22,7 @@ const Projects = () => {
       <Heading size="3" weight="medium">
         {name}
       </Heading>
-      <Text size="2" className="text-neutral-400 md:w-2/3 !leading-7">
+      <Text size="2" className="text-neutral-400 md:w-2/3 !leading-6">
         {description}
       </Text>
 
