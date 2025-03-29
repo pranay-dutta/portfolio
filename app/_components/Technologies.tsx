@@ -19,7 +19,7 @@ const Technologies = () => {
   return (
     <Flex align="center" gap="3" wrap="wrap">
       {technologoies.map(({ icon, name }) => (
-        <IconPill key={name} icon={icon} content={name} />
+        <IconPill key={name} icon={icon} content={name} isLinked={false} />
       ))}
     </Flex>
   );

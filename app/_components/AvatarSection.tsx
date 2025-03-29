@@ -17,8 +17,8 @@ const AvatarSection = () => {
         <Text className="text-neutral-400" size="2">
           Frontend Developer
         </Text>
-        <Link className="font-medium" target="_blank" href="https://google.com">
-          <IconPill content="View Resume" icon={FaGoogleDrive} />
+        <Link className="font-medium mt-1" target="_blank" href="https://google.com">
+          <IconPill content="View Resume" icon={FaGoogleDrive} isLinked={true}/>
         </Link>
       </Flex>
     </Flex>
