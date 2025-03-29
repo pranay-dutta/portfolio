@@ -8,9 +8,9 @@ import * as motion from "motion/react-client";
 export default function Home() {
   return (
     <motion.div
-      initial={{ filter: "blur(10px)" }}
+      initial={{ filter: "blur(8px)" }}
       animate={{ filter: "blur(0px)" }}
-      transition={{ duration: 0.2 }}
+      transition={{ duration: 0.6 }}
     >
       <Flex gap="2" direction="column" className="md:pr-28">
         <AvatarSection />
