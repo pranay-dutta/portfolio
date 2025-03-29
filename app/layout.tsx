@@ -3,17 +3,11 @@ import "@radix-ui/themes/styles.css";
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
-import "./theme-config.css";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
   subsets: ["latin"],
 });
-
-export const metadata: Metadata = {
-  title: "Pranay Dutta",
-  description: "I work on frontend development.",
-};
 
 export default function RootLayout({
   children,
@@ -34,3 +28,7 @@ export default function RootLayout({
     </html>
   );
 }
+export const metadata: Metadata = {
+  title: "Pranay Dutta",
+  description: "I work on frontend development.",
+};

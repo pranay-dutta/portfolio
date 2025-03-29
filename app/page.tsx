@@ -4,6 +4,7 @@ import AvatarSection from "./_components/AvatarSection";
 import Projects from "./_components/Projects";
 import Technologies from "./_components/Technologies";
 import * as motion from "motion/react-client";
+import './theme-config.css'
 
 export default function Home() {
   return (
