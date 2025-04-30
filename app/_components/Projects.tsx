@@ -29,21 +29,13 @@ const Projects = () => {
       {/* Reference Links */}
       <Flex gap="5">
         {repo && (
-          <Link
-            target="_blank"
-            className="flex gap-1 items-center"
-            href={repo.href}
-          >
+          <Link target="_blank" className="flex gap-1 items-center" href={repo.href}>
             <repo.icon size="15" />
             <Text className="text-sm">View Repo</Text>
           </Link>
         )}
         {website && (
-          <Link
-            target="_blank"
-            className="flex gap-1 items-center"
-            href={website.href}
-          >
+          <Link target="_blank" className="flex gap-1 items-center" href={website.href}>
             <website.icon size="15" />
             <Text className="text-sm">Website</Text>
           </Link>

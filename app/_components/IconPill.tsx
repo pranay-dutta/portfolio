@@ -20,7 +20,7 @@ const IconPill = ({ icon: Icon, content, isLinked }: Props) => {
         "opacity-70 hover:opacity-100": !isLinked,
       })}
     >
-      <Icon size={isLinked ? 12 : 14 } />
+      <Icon size={isLinked ? 12 : 14} />
       <Text>{content}</Text>
     </Flex>
   );
