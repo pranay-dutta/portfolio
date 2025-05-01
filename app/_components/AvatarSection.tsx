@@ -15,10 +15,14 @@ const AvatarSection = () => {
           Pranay Dutta
         </Heading>
         <Text className="text-neutral-400" size="2">
-          Frontend Developer
+          West Bengal, India
         </Text>
-        <Link className="font-medium mt-1 hover:scale-105 transition-all" target="_blank" href="https://google.com">
-          <IconPill content="View Resume" icon={FaGoogleDrive} isLinked={true}/>
+        <Link
+          className="font-medium mt-1 hover:scale-105 transition-all"
+          target="_blank"
+          href="https://google.com"
+        >
+          <IconPill content="View Resume" icon={FaGoogleDrive} isLinked={true} />
         </Link>
       </Flex>
     </Flex>
