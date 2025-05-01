@@ -1,6 +1,6 @@
 import { Flex, Text } from "@radix-ui/themes";
-import Link from "next/link";
 import React from "react";
+import Link from "./Link";
 const links = [
   { name: "Github", url: "https://github.com/pranay-dutta" },
   { name: "LinkedIn", url: "https://linkedin.com/in/pranay-dutta" },
@@ -22,12 +22,10 @@ const About = () => {
       <Text size="2" className="text-neutral-400 !leading-loose">
         you can find me on{" "}
         {links.map((link, index) => (
-          <Text className="text-neutral-300 text-md" key={index}>
-            <Link href={link.url} target="_blank">
-              {link.name}
-              {index + 1 != links.length && ","}{" "}
-            </Link>
-          </Text>
+          <Link href={link.url} key={index}>
+            {link.name}
+            {++index < links.length && ", "}
+          </Link>
         ))}
       </Text>
     </Flex>

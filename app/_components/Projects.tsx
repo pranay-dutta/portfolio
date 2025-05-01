@@ -1,9 +1,9 @@
 import { Flex, Heading, Text } from "@radix-ui/themes";
-import Link from "next/link";
 import React from "react";
 import { IconType } from "react-icons";
 import { CiGlobe } from "react-icons/ci";
 import { FaGithub } from "react-icons/fa";
+import Link from "./Link";
 interface Reference {
   icon: IconType;
   href: string;
@@ -29,13 +29,13 @@ const Projects = () => {
       {/* Reference Links */}
       <Flex gap="5">
         {repo && (
-          <Link target="_blank" className="flex gap-1 items-center" href={repo.href}>
+          <Link className="flex gap-1 items-center" href={repo.href}>
             <repo.icon size="15" />
             <Text className="text-sm">View Repo</Text>
           </Link>
         )}
         {website && (
-          <Link target="_blank" className="flex gap-1 items-center" href={website.href}>
+          <Link className="flex gap-1 items-center" href={website.href}>
             <website.icon size="15" />
             <Text className="text-sm">Website</Text>
           </Link>

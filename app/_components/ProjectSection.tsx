@@ -2,7 +2,7 @@
 import { AnimatePresence, motion } from "motion/react";
 import { GoArrowDownRight, GoArrowUpRight } from "react-icons/go";
 import Projects from "./Projects";
-import { Text } from "@radix-ui/themes";
+import { Box } from "@radix-ui/themes";
 import useProjectSectionOpen from "../store";
 
 const ProjectSection = () => {
@@ -10,12 +10,16 @@ const ProjectSection = () => {
 
   return (
     <>
-      <motion.div onClick={() => toggleOpen()} whileTap={{ y: 2 }} className="cursor-pointer list-none">
-        <Text className="text-neutral-300 text-sm">
+      <Box className="list-none">
+        <motion.p
+          className="cursor-pointer text-neutral-300 text-sm hover:text-blue-300 inline"
+          onClick={() => toggleOpen()}
+          whileTap={{ y: 2 }}
+        >
           See what I created{" "}
           {isOpen ? <GoArrowUpRight className="inline" /> : <GoArrowDownRight className="inline" />}
-        </Text>
-      </motion.div>
+        </motion.p>
+      </Box>
 
       <AnimatePresence initial={false}>
         {isOpen && (
