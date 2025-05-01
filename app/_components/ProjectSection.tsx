@@ -23,13 +23,13 @@ const ProjectSection = () => {
       <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div
-            className="flex flex-col gap-8 mt-6"
-            initial={{ opacity: 0, height: 0, y: 30, filter: "blur(5px)" }}
-            animate={{ opacity: 1, height: "auto", y: 0, filter: "blur(0px)" }}
-            exit={{ opacity: 0, height: 0, scale: 0, filter: "blur(5px)" }}
+            className="flex flex-col gap-8 mt-6 origin-top overflow-hidden"
+            initial={{ opacity: 0, height: 0, rotateX: -15, filter: "blur(6px)" }}
+            animate={{ opacity: 1, height: "auto", rotateX: 0, filter: "blur(0px)" }}
+            exit={{ opacity: 0, height: 0, rotateX: -15, filter: "blur(6px)" }}
             transition={{
-              height: { duration: 0.4 },
-              opacity: { duration: 0.4 },
+              opacity: { duration: 0.3 },
+              height: { duration: 0.5, ease: [0.25, 1, 0.5, 1] },
             }}
           >
             <Projects />
