@@ -1,4 +1,4 @@
-import { Box, Flex, Text } from "@radix-ui/themes";
+import { Flex, Text } from "@radix-ui/themes";
 import Link from "./Link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
