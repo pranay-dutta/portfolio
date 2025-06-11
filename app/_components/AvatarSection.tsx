@@ -5,14 +5,15 @@ import { FaGoogleDrive } from "react-icons/fa";
 import React from "react";
 import ProfileImg from "../../public/profile.png";
 import IconPill from "./IconPill";
+import ShinyText from "../_ui/text-animations/ShinyText/ShinyText";
 
 const AvatarSection = () => {
   return (
     <Flex align="center" gap="4">
       <Image width={100} src={ProfileImg} alt="profile image" priority />
       <Flex direction="column" gap="1">
-        <Heading size="5" weight="medium">
-          Pranay Dutta
+        <Heading size="5" weight="medium" >
+          <ShinyText text="Pranay Dutta" />
         </Heading>
         <Text className="text-neutral-400" size="2">
           West Bengal, India
