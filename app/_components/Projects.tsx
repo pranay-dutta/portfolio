@@ -18,7 +18,7 @@ interface ProjectType {
 
 const Projects = () => {
   return (
-    <Grid columns="2" rows="2" gap="6">
+    <Grid columns={{initial: "1", sm: "2"}} rows="2" gap="6">
       {projects.map(({ id, description, name, repo, website }) => (
         <Flex gap="3" direction="column" key={id}>
           <Heading size="3" weight="medium">{name}</Heading>
