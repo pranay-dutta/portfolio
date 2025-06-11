@@ -1,4 +1,4 @@
-import { Flex, Heading, Text } from "@radix-ui/themes";
+import { Flex, Grid, Heading, Text } from "@radix-ui/themes";
 import React from "react";
 import { IconType } from "react-icons";
 import { CiGlobe } from "react-icons/ci";
@@ -17,32 +17,34 @@ interface ProjectType {
 }
 
 const Projects = () => {
-  return projects.map(({ id, description, name, repo, website }) => (
-    <Flex direction="column" gap="2" key={id}>
-      <Heading size="3" weight="medium">
-        {name}
-      </Heading>
-      <Text size="2" className="text-neutral-400 md:w-2/3 !leading-6">
-        {description}
-      </Text>
+  return (
+    <Grid columns="2" rows="2" gap="6">
+      {projects.map(({ id, description, name, repo, website }) => (
+        <Flex gap="3" direction="column" key={id}>
+          <Heading size="3" weight="medium">{name}</Heading>
+          <Text size="2" className="text-neutral-400 !leading-6">
+            {description}
+          </Text>
 
-      {/* Reference Links */}
-      <Flex gap="5">
-        {repo && (
-          <Link className="flex gap-1 items-center" href={repo.href}>
-            <repo.icon size="15" />
-            <Text className="text-sm">View Repo</Text>
-          </Link>
-        )}
-        {website && (
-          <Link className="flex gap-1 items-center" href={website.href}>
-            <website.icon size="15" />
-            <Text className="text-sm">Website</Text>
-          </Link>
-        )}
-      </Flex>
-    </Flex>
-  ));
+          {/* Reference Links */}
+          <Flex gap="5">
+            {repo && (
+              <Link className="flex gap-1 items-center" href={repo.href}>
+                <repo.icon size="15" />
+                <Text className="text-sm">View Repo</Text>
+              </Link>
+            )}
+            {website && (
+              <Link className="flex gap-1 items-center" href={website.href}>
+                <website.icon size="15" />
+                <Text className="text-sm">Website</Text>
+              </Link>
+            )}
+          </Flex>
+        </Flex>
+      ))}
+    </Grid>
+  );
 };
 
 const projects: ProjectType[] = [
