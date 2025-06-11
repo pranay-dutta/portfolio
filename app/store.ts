@@ -4,9 +4,9 @@ interface ProjetSection {
   isOpen: boolean;
   toggleOpen: () => void;
 }
-const useProjectSectionOpen = create<ProjetSection>((set) => ({
+const useProjectSectionOpenStore = create<ProjetSection>((set) => ({
   isOpen: false,
   toggleOpen: () => set((state) => ({ isOpen: !state.isOpen })),
 }));
 
-export default useProjectSectionOpen;
+export default useProjectSectionOpenStore;
