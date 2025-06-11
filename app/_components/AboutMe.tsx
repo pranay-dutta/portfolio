@@ -1,9 +1,10 @@
-import { Flex, Text } from "@radix-ui/themes";
-import React from "react";
+import { Box, Flex, Text } from "@radix-ui/themes";
 import Link from "./Link";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+
 const links = [
-  { name: "Github", url: "https://github.com/pranay-dutta" },
-  { name: "LinkedIn", url: "https://linkedin.com/in/pranay-dutta" },
+  { id: 1, name: "Github", icon: FaGithub, url: "https://github.com/pranay-dutta" },
+  { id: 2, name: "LinkedIn", icon: FaLinkedin, url: "https://linkedin.com/in/pranay-dutta" },
 ];
 
 const abouts = [
@@ -19,15 +20,15 @@ const About = () => {
           {about}
         </Text>
       ))}
-      <Text size="2" className="text-neutral-400 !leading-loose">
-        you can find me on{" "}
+      <Flex align="center" gap="2" className="text-neutral-400 !leading-loose">
+        You can find me on
         {links.map((link, index) => (
-          <Link href={link.url} key={index}>
-            {link.name}
-            {++index < links.length && ", "}
+          <Link className="flex items-center" href={link.url} key={link.id}>
+            <link.icon className="inline-block" />{" "}
+            {link.name}{++index < links.length && ", "}
           </Link>
         ))}
-      </Text>
+      </Flex>
     </Flex>
   );
 };
