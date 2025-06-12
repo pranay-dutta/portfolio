@@ -1,9 +1,10 @@
-import { Flex, Heading, Text } from "@radix-ui/themes";
+import { Flex, Grid, Heading, Text } from "@radix-ui/themes";
 import React from "react";
 import { IconType } from "react-icons";
 import { CiGlobe } from "react-icons/ci";
 import { FaGithub } from "react-icons/fa";
 import Link from "./Link";
+import GlareHover from "../_ui/animations/GlareHover/GlareHover";
 interface Reference {
   icon: IconType;
   href: string;
@@ -17,32 +18,36 @@ interface ProjectType {
 }
 
 const Projects = () => {
-  return projects.map(({ id, description, name, repo, website }) => (
-    <Flex direction="column" gap="2" key={id}>
-      <Heading size="3" weight="medium">
-        {name}
-      </Heading>
-      <Text size="2" className="text-neutral-400 md:w-2/3 !leading-6">
-        {description}
-      </Text>
+  return (
+    <Grid columns={{ initial: "1", sm: "2" }} rows="2" gap="4">
+      {projects.map(({ id, description, name, repo, website }) => (
+        <GlareHover width="fit-content" height="fit-content" className="p-4" key={id} playOnce>
+          <Flex gap="3" direction="column" position="relative">
+            <Heading size="3" weight="medium">{name}</Heading>
+            <Text size="2" className="text-neutral-400 !leading-6">
+              {description}
+            </Text>
 
-      {/* Reference Links */}
-      <Flex gap="5">
-        {repo && (
-          <Link className="flex gap-1 items-center" href={repo.href}>
-            <repo.icon size="15" />
-            <Text className="text-sm">View Repo</Text>
-          </Link>
-        )}
-        {website && (
-          <Link className="flex gap-1 items-center" href={website.href}>
-            <website.icon size="15" />
-            <Text className="text-sm">Website</Text>
-          </Link>
-        )}
-      </Flex>
-    </Flex>
-  ));
+            {/* Reference Links */}
+            <Flex gap="5">
+              {repo && (
+                <Link className="flex gap-1 items-center" href={repo.href}>
+                  <repo.icon size="15" />
+                  <Text className="text-sm">View Repo</Text>
+                </Link>
+              )}
+              {website && (
+                <Link className="flex gap-1 items-center" href={website.href}>
+                  <website.icon size="15" />
+                  <Text className="text-sm">Website</Text>
+                </Link>
+              )}
+            </Flex>
+          </Flex>
+        </GlareHover>
+      ))}
+    </Grid>
+  );
 };
 
 const projects: ProjectType[] = [
@@ -50,7 +55,7 @@ const projects: ProjectType[] = [
     id: 0,
     name: "Rflix",
     description:
-      "Rflix is a streaming website. This website uses TMDB api to fetch movies & tv shows and stream them using third party services.",
+      "Rflix is a online streaming website. This website uses TMDB api to fetch the movies & the tv shows then stream them using third party services.",
     repo: { icon: FaGithub, href: "https://github.com/pranay-dutta/rflix" },
     website: { icon: CiGlobe, href: "https://rflix1.vercel.app/" },
   },

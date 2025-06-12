@@ -15,9 +15,7 @@ export default function Home() {
     >
       <Flex gap="2" direction="column" className="md:pr-28">
         <AvatarSection />
-        <Heading mt="6" size="4" weight="medium">
-          About
-        </Heading>
+        <Heading mt="6" size="4" weight="medium">About</Heading>
         <AboutMe />
         <div className="mt-6">
           <Technologies />
