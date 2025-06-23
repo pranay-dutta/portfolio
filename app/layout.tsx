@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import Squares from "./_ui/backgrounds/Squares/Squares";
 import "./globals.css";
-import SplashCursor from "./_ui/animations/SplashCursor/SplashCursor";
 
 
 const dmSans = DM_Sans({
@@ -20,7 +19,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${dmSans.variable} antialiased`}>
-        <SplashCursor DENSITY_DISSIPATION={10} />
         <Theme appearance="dark">
           <main>
             <div className="absolute h-full">
