@@ -1,6 +1,7 @@
 import { Flex, Text } from "@radix-ui/themes";
 import Link from "./Link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { Highlight } from "./HighLight";
 
 const links = [
   { id: 1, name: "Github", icon: FaGithub, url: "https://github.com/pranay-dutta" },
@@ -17,15 +18,28 @@ const About = () => {
     <Flex direction="column" gap="4">
       {abouts.map((about, index) => (
         <Text size="2" className="text-neutral-400 !leading-7" key={index}>
-          {about}
+          <Highlight
+            styles={{ color: "#e6e6e6", backgroundColor: "transparent" }}
+            query={[
+              "frontend development",
+              "real world problems",
+              "2022",
+              "2025",
+              "Bachelor's degree",
+              "Computer Applications",
+            ]}
+            key={index}
+          >
+            {about}
+          </Highlight>
         </Text>
       ))}
       <Flex align="center" gap="2" className="text-neutral-400 !leading-loose">
-        You can find me on
+        <Text size="2">You can find me on</Text>
         {links.map((link, index) => (
           <Link className="flex items-center" href={link.url} key={link.id}>
-            <link.icon className="inline-block" />{" "}
-            {link.name}{++index < links.length && ", "}
+            <link.icon className="inline-block" /> {link.name}
+            {++index < links.length && ", "}
           </Link>
         ))}
       </Flex>
