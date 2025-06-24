@@ -55,14 +55,6 @@ const Projects = () => {
 const projects: ProjectType[] = [
   {
     id: 0,
-    name: "Sepentes",
-    description:
-      "Sepentes is a educational website. On serpentes you can learn about snakes and their venoms, locate nearest hospitals, sort and search snakes.",
-    repo: { icon: FaGithub, href: "https://github.com/pranay-dutta/serpentes" },
-    website: { icon: CiGlobe, href: "https://serpentes.vercel.app" },
-  },
-  {
-    id: 1,
     name: "Rflix",
     description:
       "Rflix is a online streaming website. This website uses TMDB api to fetch the movies & the tv shows then stream them using third party services.",
@@ -70,7 +62,7 @@ const projects: ProjectType[] = [
     website: { icon: CiGlobe, href: "https://rflix1.vercel.app/" },
   },
   {
-    id: 2,
+    id: 1,
     name: "Issue Tracker",
     description:
       "A next js powered project uses next-auth for authentication. Where you can create, read, update, delete issues and assign issues to specific user.",
@@ -81,7 +73,7 @@ const projects: ProjectType[] = [
     website: { icon: CiGlobe, href: "https://issue-tracker-8uhd.vercel.app/" },
   },
   {
-    id: 3,
+    id: 2,
     name: "Gamehive",
     description:
       "A full stack game query application uses Rawg api to fetch the games. Where you can view all games based on platforms and genres.",

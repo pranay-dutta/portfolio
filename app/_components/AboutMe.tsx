@@ -19,7 +19,7 @@ const About = () => {
       {abouts.map((about, index) => (
         <Text size="2" className="text-neutral-400 !leading-7" key={index}>
           <Highlight
-            styles={{ color: "#e6e6e6", backgroundColor: "transparent" }}
+            styles={{ color: "#ccc", backgroundColor: "transparent" }}
             query={[
               "frontend development",
               "real world problems",
