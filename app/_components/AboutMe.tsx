@@ -37,11 +37,11 @@ const About = () => {
         </Text>
       ))}
       <Flex align="center" gap="2" className="text-neutral-400 !leading-loose">
-        <Text size="2">You can find me on</Text>
-        {socials.map((link, index) => (
+        <Text size="2">Find me on</Text>
+        {socials.map((link) => (
           <Link className="flex items-center" href={link.url} key={link.id}>
-            <link.icon className="inline-block" /> {link.name}
-            {++index < socials.length && ", "}
+            <link.icon className="inline-block" />
+            {link.name}
           </Link>
         ))}
       </Flex>
