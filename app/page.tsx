@@ -1,11 +1,12 @@
 "use client";
 import { Flex } from "@radix-ui/themes";
+import { motion } from "framer-motion";
+import { useLayoutEffect } from "react";
 import AboutMe from "./_components/AboutMe";
 import AvatarSection from "./_components/AvatarSection";
+import ProjectSection from "./_components/ProjectSection";
 import Technologies from "./_components/Technologies";
 import "./theme-config.css";
-import ProjectSection from "./_components/ProjectSection";
-import { motion } from "framer-motion";
 
 const MotionSection = ({
   children,
@@ -27,6 +28,11 @@ const MotionSection = ({
 );
 
 export default function Home() {
+  // Ensure the page starts at the top on initial load
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <Flex gap="2" direction="column">
