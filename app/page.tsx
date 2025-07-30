@@ -1,29 +1,51 @@
-import { Flex, Heading } from "@radix-ui/themes";
-import * as motion from "motion/react-client";
+"use client";
+import { Flex } from "@radix-ui/themes";
 import AboutMe from "./_components/AboutMe";
 import AvatarSection from "./_components/AvatarSection";
 import Technologies from "./_components/Technologies";
 import "./theme-config.css";
 import ProjectSection from "./_components/ProjectSection";
+import { motion } from "framer-motion";
+
+const MotionSection = ({
+  children,
+  delay = 0,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+  delay?: number;
+}) => (
+  <motion.div
+    initial={{ y: 20, opacity: 0 }}
+    animate={{ y: 0, opacity: 1 }}
+    transition={{ duration: 0.4, ease: "easeOut", delay }}
+    className={className}
+  >
+    {children}
+  </motion.div>
+);
 
 export default function Home() {
   return (
-    <motion.div
-      initial={{ filter: "blur(8px)" }}
-      animate={{ filter: "blur(0px)" }}
-      transition={{ duration: 0.6 }}
-    >
-      <Flex gap="2" direction="column" className="md:pr-28">
-        <AvatarSection />
-        <Heading mt="6" size="4" weight="medium">About</Heading>
-        <AboutMe />
-        <div className="mt-6">
+    <div>
+      <Flex gap="2" direction="column">
+        <MotionSection delay={0}>
+          <AvatarSection />
+        </MotionSection>
+
+        <MotionSection className="mt-6" delay={0.1}>
+          <AboutMe />
+        </MotionSection>
+
+        <MotionSection className="mt-6" delay={0.2}>
           <Technologies />
-        </div>
-        <div className="mt-6">
+        </MotionSection>
+
+        <MotionSection className="mt-6" delay={0.3}>
           <ProjectSection />
-        </div>
+        </MotionSection>
       </Flex>
-    </motion.div>
+    </div>
   );
 }

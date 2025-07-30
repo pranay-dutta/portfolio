@@ -1,7 +1,6 @@
 "use client";
 
 import { Fragment, type JSX } from "react";
-
 export interface HighlightChunk {
   text: string;
   match: boolean;
