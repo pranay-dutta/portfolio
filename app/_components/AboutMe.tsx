@@ -1,6 +1,7 @@
 import { Flex, Text } from "@radix-ui/themes";
 import { Highlight } from "./HighLight";
 import Link from "next/link";
+import { FiExternalLink } from "react-icons/fi";
 
 const about = [
   `A Frontend Engineer, passionate about AI. 
@@ -26,7 +27,9 @@ const About = () => {
               className="hover:text-yellow-300 border-b border-dashed border-gray-700"
               target="_blank"
             >
-              <Text>Data structures and Algorithms here</Text>
+              <Text>
+                Data structures and Algorithms at LeetCode <FiExternalLink className="inline-block mb-1" />
+              </Text>
             </Link>
           </Text>
         ))}
