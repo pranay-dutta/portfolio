@@ -1,13 +1,11 @@
-import { Container, Theme } from "@radix-ui/themes";
+import { Theme } from "@radix-ui/themes";
 import "@radix-ui/themes/styles.css";
 import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
-import Squares from "./_ui/backgrounds/Squares/Squares";
+import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
-
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
   subsets: ["latin"],
 });
 
@@ -18,15 +16,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${dmSans.variable} antialiased`}>
+      <body className={`${spaceGrotesk.variable} antialiased`}>
         <Theme appearance="dark">
           <main>
-            <div className="absolute h-full">
-              <Squares borderColor="#2227" speed={0.5} direction="left" squareSize={30} />
-            </div>
-            <Container size="2" className="md:mr-50 px-5 py-10 lg:p-10">
-              {children}
-            </Container>
+            <div className="lg:max-w-4/11 lg:ml-[23%] md:p-8 md:pt-10  p-4">{children}</div>
           </main>
         </Theme>
       </body>

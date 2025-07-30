@@ -1,10 +1,11 @@
-import { Flex, Grid, Heading, Text } from "@radix-ui/themes";
+"use client";
+import { Box, Flex, Grid, Text } from "@radix-ui/themes";
 import React from "react";
 import { IconType } from "react-icons";
 import { CiGlobe } from "react-icons/ci";
 import { FaGithub } from "react-icons/fa";
 import Link from "./Link";
-import GlareHover from "../_ui/animations/GlareHover/GlareHover";
+import { motion } from "framer-motion";
 interface Reference {
   icon: IconType;
   href: string;
@@ -19,36 +20,52 @@ interface ProjectType {
 
 const Projects = () => {
   return (
-    <Grid columns={{ initial: "1", sm: "2" }} rows="2" gap="4">
-      {projects.map(({ id, description, name, repo, website }) => (
-        <GlareHover width="fit-content" height="fit-content" className="p-4" key={id} playOnce>
-          <Flex gap="3" direction="column" position="relative">
-            <Heading size="3" weight="medium">
-              {name}
-            </Heading>
-            <Text size="2" className="text-neutral-400 !leading-6">
-              {description}
-            </Text>
-
-            {/* Reference Links */}
-            <Flex gap="5">
-              {repo && (
-                <Link className="flex gap-1 items-center" href={repo.href}>
-                  <repo.icon size="15" />
-                  <Text className="text-sm">View Repo</Text>
-                </Link>
-              )}
-              {website && (
-                <Link className="flex gap-1 items-center" href={website.href}>
-                  <website.icon size="15" />
-                  <Text className="text-sm">Website</Text>
-                </Link>
-              )}
-            </Flex>
-          </Flex>
-        </GlareHover>
+    <Grid columns={{ initial: "1", sm: "2" }} rows="2" gap="8">
+      {projects.map((project) => (
+        <motion.div
+          key={project.id}
+          initial={{ opacity: 0, y: 0 }}
+          animate={{ opacity: 1, y: [25, 0] }}
+          transition={{
+            duration: 0.3 + project.id * 0.3,
+          }}
+        >
+          <Project project={project} />
+        </motion.div>
       ))}
     </Grid>
+  );
+};
+
+const Project = ({ project }: { project: ProjectType }) => {
+  const { id, description, name, repo, website } = project;
+  return (
+    <Box width="fit-content" height="fit-content" key={id}>
+      <Flex gap="3" direction="column" position="relative">
+        <Text size="2" weight="medium">
+          {name}
+        </Text>
+        <Text size="2" className="text-neutral-400 !leading-6">
+          {description}
+        </Text>
+
+        {/* Reference Links */}
+        <Flex gap="5">
+          {repo && (
+            <Link className="flex gap-1 items-center" href={repo.href}>
+              <repo.icon size="15" />
+              <Text className="text-sm">View Repo</Text>
+            </Link>
+          )}
+          {website && (
+            <Link className="flex gap-1 items-center" href={website.href}>
+              <website.icon size="15" />
+              <Text className="text-sm">Website</Text>
+            </Link>
+          )}
+        </Flex>
+      </Flex>
+    </Box>
   );
 };
 
