@@ -1,11 +1,15 @@
 "use client";
 import { Flex } from "@radix-ui/themes";
 import { motion } from "framer-motion";
-import { useLayoutEffect } from "react";
+import { useLayoutEffect, useState } from "react";
 import AboutMe from "./_components/AboutMe";
 import AvatarSection from "./_components/AvatarSection";
+import LottiePlayer from "./_components/LottiePlayer";
+import MusicPlayButton from "./_components/MusicPlayButton";
 import ProjectSection from "./_components/ProjectSection";
 import Technologies from "./_components/Technologies";
+import YoutubeVideo from "./_components/YoutubeVideo";
+import { YoutubeContextProvider } from "./context/useYoutubeContext";
 import "./theme-config.css";
 
 const MotionSection = ({
@@ -28,27 +32,39 @@ const MotionSection = ({
 );
 
 export default function Home() {
-  // Ensure the page starts at the top on initial load
+  const [play, setPlay] = useState(false);
+
   useLayoutEffect(() => {
+    // Ensure the page starts at the top on initial load
     window.scrollTo(0, 0);
   }, []);
 
   return (
-    <div>
+    <div className="relative">
       <Flex gap="2" direction="column">
-        <MotionSection delay={0}>
-          <AvatarSection />
-        </MotionSection>
+        {/* Youtube video context */}
+        <YoutubeContextProvider value={{ play, setPlay }}>
+          <MotionSection className="relative" delay={0}>
+            <AvatarSection />
+            <LottiePlayer />
+          </MotionSection>
 
-        <MotionSection className="mt-6" delay={0.1}>
+          {/* Youtube video and animation */}
+          <MotionSection className="mt-4" delay={0.2}>
+            <MusicPlayButton />
+            <YoutubeVideo />
+          </MotionSection>
+        </YoutubeContextProvider>
+
+        <MotionSection className="mt-4" delay={0.3}>
           <AboutMe />
         </MotionSection>
 
-        <MotionSection className="mt-6" delay={0.2}>
+        <MotionSection className="mt-6" delay={0.4}>
           <Technologies />
         </MotionSection>
 
-        <MotionSection className="mt-6" delay={0.3}>
+        <MotionSection className="mt-6" delay={0.5}>
           <ProjectSection />
         </MotionSection>
       </Flex>

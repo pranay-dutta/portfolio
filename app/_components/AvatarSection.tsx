@@ -17,7 +17,7 @@ const AvatarSection = () => {
   return (
     <Flex align="center" gap="3">
       {/* Profile Image */}
-      <Image className="rounded-full w-26 h-26" loading="lazy" src={ProfileImg} alt="Pranay Dutta" />
+      <Image className="rounded-full w-26 h-26" priority src={ProfileImg} alt="Pranay Dutta" />
 
       {/* My social links and information */}
       <Flex direction="column" gap="2">
