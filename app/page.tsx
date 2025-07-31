@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useLayoutEffect } from "react";
 import AboutMe from "./_components/AboutMe";
 import AvatarSection from "./_components/AvatarSection";
+import LegacyPortfolioSection from "./_components/LegacyPortfolioSection";
 import ProjectSection from "./_components/ProjectSection";
 import Technologies from "./_components/Technologies";
 import "./theme-config.css";
@@ -50,6 +51,10 @@ export default function Home() {
 
         <MotionSection className="mt-6" delay={0.3}>
           <ProjectSection />
+        </MotionSection>
+
+        <MotionSection className="mt-6" delay={0.4}>
+          <LegacyPortfolioSection />
         </MotionSection>
       </Flex>
     </div>
