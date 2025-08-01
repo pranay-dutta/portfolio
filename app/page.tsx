@@ -1,22 +1,14 @@
 "use client";
+import { About, AvatarSection, LottiePlayer, ProjectSection, Technologies } from "@/app/_components";
 import { Flex } from "@radix-ui/themes";
 import { motion } from "framer-motion";
 import { useLayoutEffect } from "react";
-import AboutMe from "./_components/AboutMe";
-import AvatarSection from "./_components/AvatarSection";
-import LottiePlayer from "./_components/LottiePlayer";
-import MusicPlayPauseButton from "./_components/MusicPlayPause";
-import ProjectSection from "./_components/ProjectSection";
-import Technologies from "./_components/Technologies";
-import YoutubeVideo from "./_components/YoutubeVideo";
-import "./theme-config.css";
-import MusicNextButton from "./_components/MusicNextButton";
-import MusicPreviousButton from "./_components/MusicPreviousButton";
+import SongSection from "./_components/SongSection";
 import { useYoutubeControls } from "./hook/useYoutubeContorls";
+import "./theme-config.css";
 
 export default function Home() {
-  const { getPlayerState, onReady, next, prev, play, pause } = useYoutubeControls();
-  //TODO: Show & hide player controls
+  const { getPlayerState } = useYoutubeControls();
 
   useLayoutEffect(() => {
     // Ensure the page starts at the top on initial load
@@ -34,19 +26,11 @@ export default function Home() {
 
         {/* Youtube video and animation */}
         <MotionSection className="mt-4" delay={0.2}>
-          {/* Player controls */}
-          <motion.div className="flex items-center gap-5">
-            <MusicPreviousButton prev={prev} />
-            <MusicPlayPauseButton getPlayerState={getPlayerState} play={play} pause={pause} />
-            <MusicNextButton next={next} />
-          </motion.div>
-
-          {/* Youtube video */}
-          <YoutubeVideo onReady={onReady} />
+          <SongSection />
         </MotionSection>
 
-        <MotionSection className="mt-4" delay={0.3}>
-          <AboutMe />
+        <MotionSection className="mt-2" delay={0.3}>
+          <About />
         </MotionSection>
 
         <MotionSection className="mt-6" delay={0.4}>

@@ -1,0 +1,12 @@
+export { default as About } from "./About";
+export { default as AvatarSection } from "./AvatarSection";
+export { default as HighLight } from "./HighLight";
+export { default as IconPill } from "./IconPill";
+export { default as Link } from "./Link";
+export { default as LottiePlayer } from "./LottiePlayer";
+export { default as MusicNextButton } from "./MusicNextButton";
+export { default as MusicPlayPauseButton } from "./MusicPlayPause";
+export { default as MusicPreviousButton } from "./MusicPreviousButton";
+export { default as ProjectSection } from "./ProjectSection";
+export { default as Technologies } from "./Technologies";
+export { default as YoutubeVideo } from "./YoutubeVideo";

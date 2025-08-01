@@ -53,7 +53,7 @@ function getChunks({
   return result;
 }
 
-export function Highlight(props: HighlightProps): JSX.Element {
+export default function Highlight(props: HighlightProps): JSX.Element {
   const { children, query, styles, ignoreCase, matchAll } = props;
 
   if (typeof children !== "string") {

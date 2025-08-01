@@ -1,5 +1,5 @@
 import { Flex, Text } from "@radix-ui/themes";
-import { Highlight } from "./HighLight";
+import Highlight from "./HighLight";
 import Link from "next/link";
 import { FiExternalLink } from "react-icons/fi";
 
@@ -24,7 +24,7 @@ const About = () => {
             </Highlight>
             <Link
               href="https://leetcode.com/u/Pranay_Dutta"
-              className="hover:text-yellow-200 border-b border-dashed border-gray-700"
+              className="hover:text-pink-200 border-b border-dashed border-gray-700"
               target="_blank"
             >
               <Text>
@@ -34,7 +34,6 @@ const About = () => {
           </Text>
         ))}
       </Flex>
-
     </Flex>
   );
 };
