@@ -1,16 +1,18 @@
-import { useYoutubeContext } from "../context/useYoutubeContext";
-
-const YoutubeVideo = () => {
-  const { play } = useYoutubeContext();
-
+import YouTube from "react-youtube";
+const YoutubeVideo = ({ onReady }: { onReady: (event: any) => void }) => {
   return (
-    <iframe
-      width="300"
-      height="200"
+    <YouTube
       className="hidden"
-      src={`https://www.youtube.com/embed/8of5w7RgcTc?si=XVDEtjEk3S9Faood&autoplay=${play}`}
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    ></iframe>
+      onReady={onReady}
+      opts={{
+        height: "30",
+        width: "60",
+        playerVars: {
+          listType: "playlist",
+          list: "PL6mQxk_dOQIatSsuHQHCKvFSVrmmJE_Cq"
+        },
+      }}
+    />
   );
 };
 

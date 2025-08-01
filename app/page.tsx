@@ -1,16 +1,65 @@
 "use client";
 import { Flex } from "@radix-ui/themes";
 import { motion } from "framer-motion";
-import { useLayoutEffect, useState } from "react";
+import { useLayoutEffect } from "react";
 import AboutMe from "./_components/AboutMe";
 import AvatarSection from "./_components/AvatarSection";
 import LottiePlayer from "./_components/LottiePlayer";
-import MusicPlayButton from "./_components/MusicPlayButton";
+import MusicPlayPauseButton from "./_components/MusicPlayPause";
 import ProjectSection from "./_components/ProjectSection";
 import Technologies from "./_components/Technologies";
 import YoutubeVideo from "./_components/YoutubeVideo";
-import { YoutubeContextProvider } from "./context/useYoutubeContext";
 import "./theme-config.css";
+import MusicNextButton from "./_components/MusicNextButton";
+import MusicPreviousButton from "./_components/MusicPreviousButton";
+import { useYoutubeControls } from "./hook/useYoutubeContorls";
+
+export default function Home() {
+  const { getPlayerState, onReady, next, prev, play, pause } = useYoutubeControls();
+  //TODO: Show & hide player controls
+
+  useLayoutEffect(() => {
+    // Ensure the page starts at the top on initial load
+    window.scrollTo(0, 0);
+  }, []);
+
+  return (
+    <div className="relative">
+      <Flex gap="2" direction="column">
+        <MotionSection className="relative" delay={0}>
+          <AvatarSection />
+          {/* Lottie animation */}
+          <LottiePlayer getPlayerState={getPlayerState} />
+        </MotionSection>
+
+        {/* Youtube video and animation */}
+        <MotionSection className="mt-4" delay={0.2}>
+          {/* Player controls */}
+          <motion.div className="flex items-center gap-5">
+            <MusicPreviousButton prev={prev} />
+            <MusicPlayPauseButton getPlayerState={getPlayerState} play={play} pause={pause} />
+            <MusicNextButton next={next} />
+          </motion.div>
+
+          {/* Youtube video */}
+          <YoutubeVideo onReady={onReady} />
+        </MotionSection>
+
+        <MotionSection className="mt-4" delay={0.3}>
+          <AboutMe />
+        </MotionSection>
+
+        <MotionSection className="mt-6" delay={0.4}>
+          <Technologies />
+        </MotionSection>
+
+        <MotionSection className="mt-6" delay={0.5}>
+          <ProjectSection />
+        </MotionSection>
+      </Flex>
+    </div>
+  );
+}
 
 const MotionSection = ({
   children,
@@ -30,44 +79,3 @@ const MotionSection = ({
     {children}
   </motion.div>
 );
-
-export default function Home() {
-  const [play, setPlay] = useState(false);
-
-  useLayoutEffect(() => {
-    // Ensure the page starts at the top on initial load
-    window.scrollTo(0, 0);
-  }, []);
-
-  return (
-    <div className="relative">
-      <Flex gap="2" direction="column">
-        {/* Youtube video context */}
-        <YoutubeContextProvider value={{ play, setPlay }}>
-          <MotionSection className="relative" delay={0}>
-            <AvatarSection />
-            <LottiePlayer />
-          </MotionSection>
-
-          {/* Youtube video and animation */}
-          <MotionSection className="mt-4" delay={0.2}>
-            <MusicPlayButton />
-            <YoutubeVideo />
-          </MotionSection>
-        </YoutubeContextProvider>
-
-        <MotionSection className="mt-4" delay={0.3}>
-          <AboutMe />
-        </MotionSection>
-
-        <MotionSection className="mt-6" delay={0.4}>
-          <Technologies />
-        </MotionSection>
-
-        <MotionSection className="mt-6" delay={0.5}>
-          <ProjectSection />
-        </MotionSection>
-      </Flex>
-    </div>
-  );
-}
