@@ -8,7 +8,7 @@ import { useYoutubeControls } from "./hook/useYoutubeContorls";
 import "./theme-config.css";
 
 export default function Home() {
-  const { getPlayerState } = useYoutubeControls();
+  const controls = useYoutubeControls();
 
   useLayoutEffect(() => {
     // Ensure the page starts at the top on initial load
@@ -21,12 +21,12 @@ export default function Home() {
         <MotionSection className="relative" delay={0}>
           <AvatarSection />
           {/* Lottie animation */}
-          <LottiePlayer getPlayerState={getPlayerState} />
+          <LottiePlayer getPlayerState={controls.getPlayerState} />
         </MotionSection>
 
         {/* Youtube video and animation */}
         <MotionSection className="mt-4" delay={0.2}>
-          <SongSection />
+          <SongSection {...controls} />
         </MotionSection>
 
         <MotionSection className="mt-2" delay={0.3}>

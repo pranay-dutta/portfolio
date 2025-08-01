@@ -6,11 +6,19 @@ import MusicNextButton from "./MusicNextButton";
 import MusicPlayPauseButton from "./MusicPlayPause";
 import MusicPreviousButton from "./MusicPreviousButton";
 import YoutubeVideo from "./YoutubeVideo";
-import { useYoutubeControls } from "../hook/useYoutubeContorls";
 
-const SongSection = () => {
+interface SongSectionProps {
+  onReady: (event: any) => void;
+  play: () => any;
+  pause: () => any;
+  next: () => any;
+  prev: () => any;
+  getPlayerState: () => number;
+}
+
+const SongSection = ({ onReady, getPlayerState, next, prev, play, pause }: SongSectionProps) => {
   const [showPlayer, setShowPlayer] = useState(false);
-  const { getPlayerState, onReady, next, prev, play, pause } = useYoutubeControls();
+
   return (
     <>
       {/* Music play recommendation */}
