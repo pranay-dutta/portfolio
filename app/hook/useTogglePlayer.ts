@@ -9,7 +9,7 @@ type PlayerControls = {
 
 export const useTogglePlayer = ({ getPlayerState, play, pause }: PlayerControls) => {
   const controls = useAnimation();
-  const [playing, setPlaying] = useState(false);
+  const [playing, setPlaying] = useState(getPlayerState() === 1);
 
   const toggle = async () => {
     if (getPlayerState?.() === 1) {
