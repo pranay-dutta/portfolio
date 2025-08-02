@@ -1,5 +1,9 @@
 import YouTube from "react-youtube";
+import usePlayListIdStore from "../store/usePlayListIdStore";
+
 const YoutubeVideo = ({ onReady }: { onReady: (event: any) => void }) => {
+  const playListId = usePlayListIdStore((state) => state.playListId);
+
   return (
     <YouTube
       className="opacity-0"
@@ -10,7 +14,7 @@ const YoutubeVideo = ({ onReady }: { onReady: (event: any) => void }) => {
         width: "1",
         playerVars: {
           listType: "playlist",
-          list: "PL6mQxk_dOQIatSsuHQHCKvFSVrmmJE_Cq",
+          list: playListId,
         },
       }}
     />

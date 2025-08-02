@@ -19,7 +19,7 @@ export default function RootLayout({
       <body className={`${spaceGrotesk.variable} antialiased`}>
         <Theme appearance="dark">
           <main>
-            <div className="lg:max-w-4/11 lg:ml-[23%] md:p-8 md:pt-10  p-4">{children}</div>
+            <div className="lg:max-w-6/11 lg:ml-[22%] xl:max-w-4/11 xl:ml-[23%] md:p-8 md:pt-10 p-4">{children}</div>
           </main>
         </Theme>
       </body>
