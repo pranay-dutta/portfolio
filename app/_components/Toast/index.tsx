@@ -7,8 +7,8 @@ interface ToastMessageProps {
 }
 const ToastMessage = ({ status }: ToastMessageProps) => {
   return (
-    <Toast.Provider swipeDirection="right">
-      <Toast.Root className="ToastRoot" open>
+    <Toast.Provider swipeDirection="down">
+      <Toast.Root className={`ToastRoot ${status}`} open>
         <Toast.Title className="ToastTitle">{status === "success" ? "Success" : "Error"}</Toast.Title>
         <Toast.Description asChild>
           <p className="ToastDescription">
