@@ -16,7 +16,7 @@ const ToastMessage = ({ status }: ToastMessageProps) => {
           </p>
         </Toast.Description>
         <Toast.Action className="ToastAction" asChild altText="How to add playlist">
-          <Dialog />
+          <Dialog state={status} />
         </Toast.Action>
       </Toast.Root>
       <Toast.Viewport className="ToastViewport" />

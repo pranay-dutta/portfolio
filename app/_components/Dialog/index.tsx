@@ -4,12 +4,14 @@ import "./styles.css";
 import { Button } from "@radix-ui/themes";
 import Markdown from "../Markdown";
 
-const DialogMessage = () => (
+const DialogMessage = ({ state }: { state: "success" | "error" }) => (
   <Dialog.Root>
     <Dialog.Trigger asChild>
-      <Button className="text-balance" variant="outline" color="gray">
-        How to get playlist ID
-      </Button>
+      {state === "error" && (
+        <Button className="text-balance" variant="outline" color="gray">
+          How to get playlist ID
+        </Button>
+      )}
     </Dialog.Trigger>
     <Dialog.Portal>
       <Dialog.Overlay className="DialogOverlay" />
