@@ -76,7 +76,7 @@ const projects: ProjectType[] = [
     id: 0,
     name: "Rflix",
     description:
-      "Rflix is a online streaming website. This website uses TMDB api to fetch the movies & the tv shows then stream them using third party services.",
+      "Rflix is a online movie browsing website. This website uses TMDB api to fetch the movies & the tv shows then show their rating, trailer, cast etc.",
     repo: { icon: FaGithub, href: "https://github.com/pranay-dutta/rflix" },
     website: { icon: CiGlobe, href: "https://rflix1.vercel.app/" },
   },
