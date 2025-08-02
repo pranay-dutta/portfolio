@@ -1,0 +1,25 @@
+.markdown-body {
+  font-family: var(--font-space-grotesk);
+}
+.markdown-body ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+
+.markdown-body ol {
+  list-style: decimal; 
+  padding-left: 1.5rem;
+}
+.markdown-body p {
+  margin-bottom: 0.5rem;
+}
+.markdown-body strong {
+  margin-bottom: 0.5rem;
+}
+.markdown-body li {
+  margin-bottom: 0.2rem;
+}
+.markdown-body a {
+  margin-bottom: 0.5rem;
+  color: var(--color-sky-200);
+}

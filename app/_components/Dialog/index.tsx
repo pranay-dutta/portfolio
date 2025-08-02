@@ -2,19 +2,20 @@ import { Dialog } from "radix-ui";
 import { RxCross2 } from "react-icons/rx";
 import "./styles.css";
 import { Button } from "@radix-ui/themes";
+import Markdown from "../Markdown";
 
 const DialogMessage = () => (
   <Dialog.Root>
     <Dialog.Trigger asChild>
-      <Button variant="outline" color="gray">
-        How to add playlist
+      <Button className="text-balance" variant="outline" color="gray">
+        How to get playlist ID
       </Button>
     </Dialog.Trigger>
-
     <Dialog.Portal>
       <Dialog.Overlay className="DialogOverlay" />
       <Dialog.Content className="DialogContent">
-        <Dialog.Title className="DialogTitle">Edit profile</Dialog.Title>
+        <Dialog.Title className="DialogTitle">{"Here's how to get a youtube playlist id"}</Dialog.Title>
+        <Markdown />
         <Dialog.Close asChild>
           <button className="IconButton" aria-label="Close">
             <RxCross2 />
@@ -22,7 +23,6 @@ const DialogMessage = () => (
         </Dialog.Close>
       </Dialog.Content>
     </Dialog.Portal>
-
   </Dialog.Root>
 );
 
