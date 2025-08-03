@@ -34,7 +34,7 @@ const SongSection = ({ onReady, getPlayerState, next, prev, play, pause }: SongS
       {/* Music play recommendation */}
       <Text
         size="2"
-        className="inline-block text-neutral-400 !leading-7 tracking-wide! cursor-pointer hover:text-pink-200"
+        className="inline-block text-neutral-400 !leading-7 tracking-wide! cursor-pointer hover:text-blue-200"
         mb={showPlayer ? "4" : "0"}
         onClick={() => setShowPlayer(!showPlayer)}
       >

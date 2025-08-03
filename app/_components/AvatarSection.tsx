@@ -37,7 +37,7 @@ const AvatarSection = () => {
             <Link key={id} href={url} target="_blank" rel="noopener noreferrer">
               <Flex
                 align="center"
-                className="hover:text-pink-200 border-b border-dashed border-gray-700"
+                className="hover:text-blue-200 border-b border-dashed border-gray-700"
                 gap="2"
               >
                 <Icon className="size-3 sm:size-3.5 " />

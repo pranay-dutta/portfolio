@@ -9,7 +9,7 @@ interface Props {
 const Link = ({ href, children, className }: Props) => {
   return (
     <NextLink
-      className={"text-neutral-300 hover:text-pink-200 gap-1 " + className}
+      className={"text-neutral-300 hover:text-blue-200 gap-1 " + className}
       target="_blank"
       href={href}
     >
