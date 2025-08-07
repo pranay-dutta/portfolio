@@ -12,6 +12,8 @@ export const useYoutubeControls = () => {
   const next = () => playerRef.current?.nextVideo();
   const prev = () => playerRef.current?.previousVideo();
   const getPlayerState = (): number => playerRef.current?.getPlayerState();
+  const getCurrentTime = (): number => playerRef.current?.getCurrentTime();
+  const getDuration = (): number => playerRef.current?.getDuration();
 
   return {
     onReady,
@@ -20,6 +22,8 @@ export const useYoutubeControls = () => {
     next,
     prev,
     getPlayerState,
+    getCurrentTime,
+    getDuration,
     player: playerRef,
   };
 };

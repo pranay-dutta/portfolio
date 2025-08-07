@@ -1,5 +1,5 @@
 import { Button, Text } from "@radix-ui/themes";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import { createContext, Dispatch, SetStateAction, useState } from "react";
 import { GoArrowDownRight, GoArrowUpRight } from "react-icons/go";
 import { IoMdAdd } from "react-icons/io";
@@ -8,6 +8,7 @@ import MusicPlayPauseButton from "./MusicPlayPause";
 import MusicPreviousButton from "./MusicPreviousButton";
 import PlayListForm from "./PlayListForm";
 import YoutubeVideo from "./YoutubeVideo";
+import ProgressBar from "./ProgressBar";
 
 interface SongSectionProps {
   onReady: (event: any) => void;
@@ -16,6 +17,8 @@ interface SongSectionProps {
   next: () => any;
   prev: () => any;
   getPlayerState: () => number;
+  getCurrentTime: () => number; //Time elapsed in seconds
+  getDuration: () => number; //Total duration in seconds
 }
 
 type ShowInputContextType = {
@@ -25,7 +28,16 @@ type ShowInputContextType = {
 
 export const ShowInputContext = createContext<ShowInputContextType | null>(null);
 
-const SongSection = ({ onReady, getPlayerState, next, prev, play, pause }: SongSectionProps) => {
+const SongSection = ({
+  onReady,
+  prev,
+  play,
+  pause,
+  next,
+  getPlayerState,
+  getCurrentTime,
+  getDuration,
+}: SongSectionProps) => {
   const [showPlayer, setShowPlayer] = useState(false);
   const [showInput, setShowInput] = useState(false);
 
@@ -41,7 +53,6 @@ const SongSection = ({ onReady, getPlayerState, next, prev, play, pause }: SongS
         Wanna listen to some music{" "}
         {showPlayer ? <GoArrowUpRight className="inline" /> : <GoArrowDownRight className="inline" />}
       </Text>
-
       {/* Player controls */}
       <AnimatePresence>
         {showPlayer && (
@@ -93,6 +104,20 @@ const SongSection = ({ onReady, getPlayerState, next, prev, play, pause }: SongS
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Progress Bar*/}
+      {showPlayer && (
+        <AnimatePresence>
+          <motion.div
+            initial={{ width: "0%" }}
+            animate={{ width: "100%" }}
+            transition={{ duration: 0.2, ease: "easeInOut" }}
+            className="mt-4"
+          >
+            <ProgressBar getCurrentTime={getCurrentTime} getDuration={getDuration} />
+          </motion.div>
+        </AnimatePresence>
+      )}
 
       {/* Youtube video */}
       <YoutubeVideo onReady={onReady} />
