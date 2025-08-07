@@ -1,7 +1,7 @@
 /*
   Installed from https://reactbits.dev/ts/default/
 */
-'use client'
+"use client";
 import React, { useRef, useLayoutEffect, useState, JSX } from "react";
 import {
   motion,
@@ -11,7 +11,7 @@ import {
   useMotionValue,
   useVelocity,
   useAnimationFrame,
-} from "framer-motion";
+} from "motion/react";
 import "./ScrollVelocity.css";
 
 interface VelocityMapping {
@@ -36,7 +36,7 @@ interface VelocityTextProps {
 
 interface ScrollVelocityProps {
   scrollContainerRef?: React.RefObject<HTMLElement>;
-  childrens: JSX.Element[],
+  childrens: JSX.Element[];
   velocity?: number;
   className?: string;
   damping?: number;

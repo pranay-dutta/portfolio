@@ -12,6 +12,7 @@ const YoutubeVideo = ({ onReady }: { onReady: (event: any) => void }) => {
       opts={{
         height: "1",
         width: "1",
+        host: "https://www.youtube-nocookie.com",
         playerVars: {
           listType: "playlist",
           list: playListId,

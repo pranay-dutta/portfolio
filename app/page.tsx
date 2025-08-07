@@ -1,7 +1,7 @@
 "use client";
 import { About, AvatarSection, LottiePlayer, ProjectSection, Technologies } from "@/app/_components";
 import { Flex } from "@radix-ui/themes";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { useLayoutEffect } from "react";
 import SongSection from "./_components/SongSection";
 import { useYoutubeControls } from "./hook/useYoutubeContorls";

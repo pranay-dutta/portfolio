@@ -1,5 +1,5 @@
 import { Button, Kbd } from "@radix-ui/themes";
-import { motion, useAnimation } from "framer-motion";
+import { motion, useAnimation } from "motion/react";
 import { useEffect } from "react";
 
 const MusicNextButton = ({ next }: { next: () => any }) => {

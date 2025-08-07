@@ -5,7 +5,7 @@ import { IconType } from "react-icons";
 import { CiGlobe } from "react-icons/ci";
 import { FaGithub } from "react-icons/fa";
 import Link from "./Link";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 interface Reference {
   icon: IconType;
   href: string;

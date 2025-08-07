@@ -1,4 +1,4 @@
-import { useAnimation } from "framer-motion";
+import { useAnimation } from "motion/react";
 import { useState } from "react";
 
 type PlayerControls = {
