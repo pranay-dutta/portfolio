@@ -1,6 +1,5 @@
 export { default as About } from "./About";
 export { default as AvatarSection } from "./AvatarSection";
-export { default as HighLight } from "./HighLight";
 export { default as IconPill } from "./IconPill";
 export { default as Link } from "./Link";
 export { default as LottiePlayer } from "./LottiePlayer";
