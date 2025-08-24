@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import { IconType } from "react-icons";
 import { BiLogoPostgresql } from "react-icons/bi";
 import { GrReactjs } from "react-icons/gr";
@@ -13,34 +14,41 @@ import {
   SiTypescript,
 } from "react-icons/si";
 import IconPill from "./IconPill";
-import ScrollVelocity from "../_ui/text-animations/ScrollVelocity/ScrollVelocity";
 interface Technology {
   icon: IconType;
-  name: string
+  name: string;
 }
 
-const firstLine: Technology[] = [
+const technologies: Technology[] = [
   { icon: SiJavascript, name: "Javascript" },
   { icon: SiTypescript, name: "Typescript" },
   { icon: GrReactjs, name: "React.js" },
   { icon: SiPrisma, name: "Prisma" },
   { icon: SiExpress, name: "Express.js" },
-];
-const secondLine: Technology[] = [
   { icon: SiTailwindcss, name: "Tailwind CSS" },
   { icon: SiBootstrap, name: "Bootstrap" },
   { icon: SiChakraui, name: "Chakra UI" },
   { icon: SiMui, name: "Material UI" },
   { icon: RiNextjsFill, name: "Next.js" },
-  { icon: BiLogoPostgresql, name: "Postgres" },
-]
-
-const firstLineDiv = <div className="flex gap-2 pe-2">{firstLine.map(({ icon, name }) => <IconPill key={name} icon={icon} content={name} isLinked={false} />)}</div>
-const secondLineDiv = <div className="flex gap-2 pe-2">{secondLine.map(({ icon, name }) => <IconPill key={name} icon={icon} content={name} isLinked={false} />)}</div>
+  { icon: BiLogoPostgresql, name: "PostgreSQL" },
+];
 
 const Technologies = () => {
   return (
-    <ScrollVelocity childrens={[firstLineDiv, secondLineDiv]} />
+    <>
+      <div className="flex flex-wrap gap-2">
+        {technologies.map((tech, index) => (
+          <motion.div
+            key={tech.name}
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3, ease: "easeIn", delay: index * 0.12 }}
+          >
+            <IconPill content={tech.name} icon={tech.icon} isLinked={false} />
+          </motion.div>
+        ))}
+      </div>
+    </>
   );
 };
 

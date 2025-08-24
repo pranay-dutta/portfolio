@@ -33,7 +33,7 @@ export default function Home() {
           <About />
         </MotionSection>
 
-        <MotionSection className="mt-6" delay={0.4}>
+        <MotionSection className="mt-4" delay={0.4}>
           <Technologies />
         </MotionSection>
         <MotionSection className="mt-6" delay={0.5}>
