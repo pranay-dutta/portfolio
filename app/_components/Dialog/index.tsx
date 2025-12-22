@@ -2,7 +2,7 @@ import { Dialog } from "radix-ui";
 import { RxCross2 } from "react-icons/rx";
 import "./styles.css";
 import { Button } from "@radix-ui/themes";
-import Markdown from "../Markdown";
+import Markdown from "../markdown";
 
 const DialogMessage = ({ state }: { state: "success" | "error" }) => (
   <Dialog.Root>

@@ -1,6 +1,6 @@
 import { Toast } from "radix-ui";
 import "./styles.css";
-import Dialog from "../Dialog";
+import Dialog from "../dialog";
 
 interface ToastMessageProps {
   status: "success" | "error";

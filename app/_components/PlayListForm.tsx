@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Toast from "./Toast";
+import Toast from "./toast";
 import usePlayListIdStore from "../store/usePlayListIdStore";
 import { useShowInput } from "../hook/useShowInput";
 
