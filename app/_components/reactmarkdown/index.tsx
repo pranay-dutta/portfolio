@@ -1,4 +1,4 @@
-import ReactMarkdown from "react-markdown";
+import Markdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import "./styles.css";
 
@@ -18,12 +18,12 @@ const Instructions = `
 <img src="/mix-id.png" width="600" style="border-radius: 10px; margin: 10px 0px; margin-right: 20px;" height="auto" />
 `;
 
-const Markdown = () => {
+const ReactMarkdown = () => {
   return (
     <div className="markdown-body">
-      <ReactMarkdown rehypePlugins={[rehypeRaw]}>{Instructions}</ReactMarkdown>
+      <Markdown rehypePlugins={[rehypeRaw]}>{Instructions}</Markdown>
     </div>
   );
 };
 
-export default Markdown;
+export default ReactMarkdown;

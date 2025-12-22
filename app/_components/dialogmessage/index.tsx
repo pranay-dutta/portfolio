@@ -2,7 +2,7 @@ import { Dialog } from "radix-ui";
 import { RxCross2 } from "react-icons/rx";
 import "./styles.css";
 import { Button } from "@radix-ui/themes";
-import Markdown from "../markdown";
+import ReactMarkdown from "../reactmarkdown";
 
 const DialogMessage = ({ state }: { state: "success" | "error" }) => (
   <Dialog.Root>
@@ -17,7 +17,7 @@ const DialogMessage = ({ state }: { state: "success" | "error" }) => (
       <Dialog.Overlay className="DialogOverlay" />
       <Dialog.Content className="DialogContent">
         <Dialog.Title className="DialogTitle">{"Here's how to get a youtube playlist id"}</Dialog.Title>
-        <Markdown />
+        <ReactMarkdown />
         <Dialog.Close asChild>
           <button className="IconButton" aria-label="Close">
             <RxCross2 />
