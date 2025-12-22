@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Toast from "./toast";
+import ToastMessage from "./toastmessage";
 import usePlayListIdStore from "../store/usePlayListIdStore";
 import { useShowInput } from "../hook/useShowInput";
 
@@ -54,7 +54,7 @@ const PlayListForm = () => {
           className="flex-1 me-1 h-full rounded-md px-2 py-1 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-500"
         />
       </form>
-      {status && <Toast status={status} />}
+      {status && <ToastMessage status={status} />}
     </>
   );
 };
