@@ -17,7 +17,7 @@ const About = () => {
           <Text>
             <Link
               href="https://leetcode.com/u/Pranay_Dutta"
-              className="hover:text-blue-200 border-b border-dashed border-gray-700"
+              className="hover:text-orange-200 border-b border-dashed border-gray-700"
               target="_blank"
             >
               Data structures and Algorithms at LeetCode <FiExternalLink className="inline-block mb-1" />

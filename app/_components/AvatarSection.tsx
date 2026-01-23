@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import React from "react";
-import ProfileImg from "../../public/profile.jpg";
+import ProfileImg from "../../public/profile.jpeg";
 import { IoLocationOutline } from "react-icons/io5";
 import { BsTwitter } from "react-icons/bs";
 
@@ -37,7 +37,7 @@ const AvatarSection = () => {
             <Link key={id} href={url} target="_blank" rel="noopener noreferrer">
               <Flex
                 align="center"
-                className="hover:text-blue-200 border-b border-dashed border-gray-700"
+                className="hover:text-orange-200 border-b border-dashed border-gray-700"
                 gap="2"
               >
                 <Icon className="size-3 sm:size-3.5 " />
