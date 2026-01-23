@@ -17,20 +17,21 @@ import IconPill from "./IconPill";
 interface Technology {
   icon: IconType;
   name: string;
+  color: string;
 }
 
 const technologies: Technology[] = [
-  { icon: SiJavascript, name: "Javascript" },
-  { icon: SiTypescript, name: "Typescript" },
-  { icon: GrReactjs, name: "React.js" },
-  { icon: SiPrisma, name: "Prisma" },
-  { icon: SiExpress, name: "Express.js" },
-  { icon: SiTailwindcss, name: "Tailwind CSS" },
-  { icon: SiBootstrap, name: "Bootstrap" },
-  { icon: SiChakraui, name: "Chakra UI" },
-  { icon: SiMui, name: "Material UI" },
-  { icon: RiNextjsFill, name: "Next.js" },
-  { icon: BiLogoPostgresql, name: "PostgreSQL" },
+  { icon: SiJavascript, name: "Javascript", color: "yellow" },
+  { icon: SiTypescript, name: "Typescript", color: "blue" },
+  { icon: GrReactjs, name: "React.js", color: "cyan" },
+  { icon: SiPrisma, name: "Prisma", color: "white" },
+  { icon: SiTailwindcss, name: "Tailwind CSS", color: "blue" },
+  { icon: SiBootstrap, name: "Bootstrap", color: "purple" },
+  { icon: SiExpress, name: "Express.js", color: "green" },
+  { icon: SiChakraui, name: "Chakra UI", color: "teal" },
+  { icon: SiMui, name: "Material UI", color: "blue" },
+  { icon: RiNextjsFill, name: "Next.js", color: "white" },
+  { icon: BiLogoPostgresql, name: "PostgreSQL", color: "blue" },
 ];
 
 const Technologies = () => {
@@ -44,7 +45,7 @@ const Technologies = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.3, ease: "easeIn", delay: index * 0.12 }}
           >
-            <IconPill content={tech.name} icon={tech.icon} isLinked={false} />
+            <IconPill content={tech.name} icon={tech.icon} color={tech.color} />
           </motion.div>
         ))}
       </div>
