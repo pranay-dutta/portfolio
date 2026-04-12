@@ -9,6 +9,8 @@ import MusicPreviousButton from "./MusicPreviousButton";
 import PlayListForm from "./PlayListForm";
 import YoutubeVideo from "./YoutubeVideo";
 import ProgressBar from "./ProgressBar";
+import Link from "next/link";
+import clickHandler from "../util/clickHandler";
 
 interface SongSectionProps {
   onReady: (event: any) => void;
@@ -50,7 +52,9 @@ const SongSection = ({
         mb={showPlayer ? "4" : "0"}
         onClick={() => setShowPlayer(!showPlayer)}
       >
-        Wanna listen to some music{" "}
+        <Link href="#" style={{ transition: "all 0.3s ease-in-out" }} onClick={clickHandler}>
+          Wanna listen to some music{" "}
+        </Link>
         {showPlayer ? <GoArrowUpRight className="inline" /> : <GoArrowDownRight className="inline" />}
       </Text>
       {/* Player controls */}
@@ -67,7 +71,10 @@ const SongSection = ({
               variant="outline"
               color="gray"
               className="outline-0!"
-              onClick={() => setShowInput(!showInput)}
+              onClick={(e) => {
+                clickHandler(e);
+                setShowInput(!showInput);
+              }}
             >
               <IoMdAdd className={`inline text-white ${showInput ? "rotate-45" : ""}`} />
             </Button>

@@ -34,17 +34,18 @@ const AvatarSection = () => {
         {/* My Social Links */}
         <Flex align="center" gap="2">
           {socials.map(({ id, name, icon: Icon, url }, index) => (
-            <Link key={id} href={url} target="_blank" rel="noopener noreferrer">
-              <Flex
-                align="center"
-                className="hover:text-orange-200 border-b border-dashed border-gray-700"
-                gap="2"
-              >
+            <Flex
+              key={id}
+              align="center"
+              className="hover:text-orange-200 border-b border-dashed border-gray-700 text-sm"
+              gap="2"
+            >
+              <Link className="flex gap-2 items-center" href={url} target="_blank" rel="noopener noreferrer">
                 <Icon className="size-3 sm:size-3.5 " />
-                <Text size="1">{name}</Text>
-                {index != socials.length - 1 && <Text size="1">/</Text>}
-              </Flex>
-            </Link>
+                {name}
+              </Link>
+              {index != socials.length - 1 && <Text size="1">/</Text>}
+            </Flex>
           ))}
         </Flex>
       </Flex>
