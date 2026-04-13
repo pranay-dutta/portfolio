@@ -1,4 +1,4 @@
-import { Button, Text } from "@radix-ui/themes";
+import { Button } from "@radix-ui/themes";
 import { AnimatePresence, motion } from "motion/react";
 import { createContext, Dispatch, SetStateAction, useState } from "react";
 import { GoArrowDownRight, GoArrowUpRight } from "react-icons/go";
@@ -11,6 +11,7 @@ import YoutubeVideo from "./YoutubeVideo";
 import ProgressBar from "./ProgressBar";
 import Link from "next/link";
 import clickHandler from "../util/clickHandler";
+import classNames from "classnames";
 
 interface SongSectionProps {
   onReady: (event: any) => void;
@@ -46,17 +47,21 @@ const SongSection = ({
   return (
     <>
       {/* Music play recommendation */}
-      <Text
-        size="2"
-        className="inline-block text-neutral-400 !leading-7 tracking-wide! cursor-pointer hover:text-orange-200"
-        mb={showPlayer ? "4" : "0"}
-        onClick={() => setShowPlayer(!showPlayer)}
+      <Link
+        href="#"
+        className={classNames({
+          "inline-block text-neutral-400 text-sm leading-0 tracking-wide cursor-pointer hover:text-orange-200": true,
+          "mb-0": !showPlayer,
+          "mb-4": showPlayer,
+        })}
+        onClick={(e) => {
+          setShowPlayer(!showPlayer);
+          clickHandler(e);
+        }}
       >
-        <Link href="#" style={{ transition: "all 0.3s ease-in-out" }} onClick={clickHandler}>
-          Wanna listen to some music{" "}
-        </Link>
+        Wanna listen to some music{" "}
         {showPlayer ? <GoArrowUpRight className="inline" /> : <GoArrowDownRight className="inline" />}
-      </Text>
+      </Link>
       {/* Player controls */}
       <AnimatePresence>
         {showPlayer && (
