@@ -4,12 +4,13 @@ import { BiLogoPostgresql } from "react-icons/bi";
 import { GrReactjs } from "react-icons/gr";
 import { RiNextjsFill } from "react-icons/ri";
 import {
-  SiBootstrap,
   SiChakraui,
+  SiCplusplus,
   SiExpress,
   SiJavascript,
-  SiMui,
+  SiLinux,
   SiPrisma,
+  SiPython,
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
@@ -21,17 +22,18 @@ interface Technology {
 }
 
 const technologies: Technology[] = [
+  { icon: GrReactjs, name: "React.js", color: "cyan" },
+  { icon: RiNextjsFill, name: "Next.js", color: "white" },
+  { icon: SiTailwindcss, name: "Tailwind CSS", color: "blue" },
+  { icon: SiChakraui, name: "Chakra UI", color: "teal" },
+  { icon: SiPrisma, name: "Prisma", color: "white" },
+  { icon: SiExpress, name: "Express.js", color: "green" },
+  { icon: BiLogoPostgresql, name: "PostgreSQL", color: "blue" },
+  { icon: SiLinux, name: "Linux", color: "white" },
   { icon: SiJavascript, name: "Javascript", color: "yellow" },
   { icon: SiTypescript, name: "Typescript", color: "blue" },
-  { icon: GrReactjs, name: "React.js", color: "cyan" },
-  { icon: SiPrisma, name: "Prisma", color: "white" },
-  { icon: SiTailwindcss, name: "Tailwind CSS", color: "blue" },
-  { icon: SiBootstrap, name: "Bootstrap", color: "purple" },
-  { icon: SiExpress, name: "Express.js", color: "green" },
-  { icon: SiChakraui, name: "Chakra UI", color: "teal" },
-  { icon: SiMui, name: "Material UI", color: "blue" },
-  { icon: RiNextjsFill, name: "Next.js", color: "white" },
-  { icon: BiLogoPostgresql, name: "PostgreSQL", color: "blue" },
+  { icon: SiPython, name: "Python", color: "yellow" },
+  { icon: SiCplusplus, name: "C++", color: "blue" },
 ];
 
 const Technologies = () => {
